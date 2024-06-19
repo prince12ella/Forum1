@@ -1,0 +1,11 @@
+{{define "content"}}
+<h1>Posts</h1>
+<ul>
+    {{range .posts}}
+    <li>
+        <a href="/post/{{.ID}}">{{.Title}}</a>
+        <small>by {{.User.Username}} in {{.Category.Name}}</small>
+    </li>
+    {{end}}
+</ul>
+{{end}}

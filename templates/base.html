@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        {{if .isLoggedIn}}
+            <a href="/post/new">New Post</a>
+            <a href="/logout">Logout</a>
+        {{else}}
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        {{end}}
+    </nav>
+    <div>
+        {{ template "content" . }}
+    </div>
+</body>
+</html>

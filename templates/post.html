@@ -1,0 +1,21 @@
+{{define "content"}}
+<h1>{{.post.Title}}</h1>
+<p>{{.post.Content}}</p>
+<small>by {{.post.User.Username}}</small>
+
+<h2>Comments</h2>
+<ul>
+    {{range .post.Comments}}
+    <li>
+        <p>{{.Content}}</p>
+        <small>by {{.User.Username}}</small>
+    </li>
+    {{end}}
+</ul>
+
+<h2>Add a comment</h2>
+<form action="/post/{{.post.ID}}/comment" method="post">
+    <textarea name="content" required></textarea>
+    <button type="submit">Add Comment</button>
+</form>
+{{end}}

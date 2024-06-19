@@ -1,0 +1,14 @@
+{{define "content"}}
+<h1>Categories</h1>
+<ul>
+    {{range .categories}}
+    <li>{{.Name}}</li>
+    {{end}}
+</ul>
+<h2>Add a Category</h2>
+<form action="/categories" method="post">
+    <label for="name">Category Name</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Add Category</button>
+</form>
+{{end}}
