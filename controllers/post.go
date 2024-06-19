@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"forum/models"
+	"github.com/prince12ella/Forum1/models"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/sessions"
 	"net/http"

@@ -4,8 +4,8 @@ import (
     "net/http"
     "strconv"
 
-    "forum/models"
-
+    "github.com/prince12ella/Forum1/models"
+db "github.com/prince12ella/Forum1/db"
     "github.com/gin-contrib/sessions"
     "github.com/gin-gonic/gin"
 )
@@ -22,7 +22,7 @@ func LikePost(c *gin.Context) {
     postID, _ := strconv.Atoi(c.Param("id"))
 
     like := models.Like{PostID: uint(postID), UserID: userID.(uint)}
-    models.DB.Create(&like)
+    db.Create(&like)
     c.Redirect(http.StatusMovedPermanently, "/post/"+strconv.Itoa(postID))
 }
 
